@@ -5,67 +5,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class YemekSepetiStepDefinitions {
-    @When("User searchs restaurant in search textbox")
-    public void userSearchsRestaurantInSearchTextbox() {
+
+    @Given("User navigate to {string} page")
+    public void user_navigate_to_page(String string) {
         // Write code here that turns the phrase above into concrete actions
-
+        System.out.println("Baris");
     }
-    @When("User clicks on listed restaurant")
-    public void userClicksOnListedRestaurant() {
-        // Write code here that turns the phrase above into concrete actions
 
-    }
-    @When("User clicks Favorilere Ekle")
-    public void userClicksFavorilereEkle() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @Then("Favorilerden Çıkar displayed")
-    public void favorilerdenÇıkarDisplayed() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @Then("Favorite restaurant is displayed in the Favorilerim tab")
-    public void favoriteRestaurantIsDisplayedInTheFavorilerimTab() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @When("User clicks on Favorilerim tab")
-    public void userClicksOnFavorilerimTab() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @When("User checks on favorite restaurant")
-    public void userChecksOnFavoriteRestaurant() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @When("User clicks Sil button")
-    public void userClicksSilButton() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @Then("Favorite restaurant is removed")
-    public void favoriteRestaurantIsRemoved() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @Given("User navigate to https:\\/\\/www.yemeksepeti.com page")
-    public void userNavigateToHttpsWwwYemeksepetiComPage() {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-    @When("User enters username and password")
-    public void userEntersUsernameAndPassword() {
-
-    }
     @When("User clicks ÜYE GİRİŞİ button")
-    public void userClicksÜYEGİRİŞİButton() {
-
+    public void user_clicks_üye_gi̇ri̇şi̇_button() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("Ustek");
     }
-    @Then("User successfully logs in")
-    public void userSuccessfullyLogsIn() {
 
+    @Then("User successfully logs in")
+    public void user_successfully_logs_in() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("Cansu");
+    }
+
+    @When("User enters username and password")
+    public void user_enters_username_and_password() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("Ustek");
     }
 
 }

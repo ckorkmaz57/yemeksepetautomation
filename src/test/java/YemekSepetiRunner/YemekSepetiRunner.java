@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(plugin = {"pretty", "html:target/htmlreports.html"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = "YemekSepetiStepDefinitions",
-        features = "src/test/resources")
+        features = "classpath:/YemekSepeti/YemekSepetiLogin.feature")
 public class YemekSepetiRunner {
 
 

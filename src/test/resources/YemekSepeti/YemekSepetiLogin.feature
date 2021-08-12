@@ -2,7 +2,7 @@
 Feature: YemekSepeti Login Case
 
   Background:
-    Given User navigate to https://www.yemeksepeti.com page
+    Given User navigate to "https://www.yemeksepeti.com" page
 
   Scenario: TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password
     When User enters username and password
