@@ -54,12 +54,13 @@ public class YemekSepetiStepDefinitions {
 
         mainPage.setUserNameTextbox(username);
         mainPage.SetPasswordTexbox(password);
-        mainPage.clickButton();
+
 
     }
 
     @And("User clicks {string} button")
     public void userClicksButton(String label) {
+        mainPage.clickButton();
 
     }
 
