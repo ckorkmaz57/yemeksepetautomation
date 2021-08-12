@@ -7,7 +7,7 @@ Feature: YemekSepeti Login Case
   Scenario Outline: TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password
     When User enters <username> and <password>
     And User clicks "ÜYE GİRİŞİ" button
-    Then User successfully logs in
+    Then "TEST USER" successfully logs in
 
     Examples:
       | username                  | password      |
@@ -16,7 +16,7 @@ Feature: YemekSepeti Login Case
   Scenario: TC_YemekSepetiLogin_002_User should be successfully login, when enters correct e-mail and password
     When User enters e-mail and password
     And User clicks "ÜYE GİRİŞİ" button
-    Then User successfully logs in
+    Then "TEST USER" successfully logs in
 
   Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters invalid username or password
     When User enters <username> and <password>

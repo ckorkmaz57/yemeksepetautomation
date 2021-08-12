@@ -1,11 +1,14 @@
 package YemekSepetiStepDefinitions;
 
+import Pages.MainPage;
+import Pages.UserBox;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +18,9 @@ import java.util.concurrent.TimeUnit;
 public class YemekSepetiStepDefinitions {
 
     protected WebDriver driver;
+    MainPage mainPage ;
+    UserBox userBox;
+
     @Before
     public void beforeTest() {
         System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
@@ -25,13 +31,15 @@ public class YemekSepetiStepDefinitions {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
+        mainPage = new MainPage(driver);
+
     }
 
     @After
     public void afterTest() {
 
-        driver.close();
-        driver.quit();
+        //driver.close();
+        //driver.quit();
     }
 
     @Given("User navigate to {string} page")
@@ -42,7 +50,11 @@ public class YemekSepetiStepDefinitions {
     }
 
     @When("^User enters (.*) and (.*)$")
-    public void userEntersUsernameAndPassword() {
+    public void userEntersUsernameAndPassword(String username,String password) {
+
+        mainPage.setUserNameTextbox(username);
+        mainPage.SetPasswordTexbox(password);
+        mainPage.clickButton();
 
     }
 
@@ -51,8 +63,10 @@ public class YemekSepetiStepDefinitions {
 
     }
 
-    @Then("User successfully logs in")
-    public void userSuccessfullyLogsIn() {
+    @Then("{string} successfully logs in")
+    public void userSuccessfullyLogsIn(String username) {
+        userBox = new UserBox(driver);
+        Assert.assertTrue(userBox.checkUserName(username));
 
     }
 
