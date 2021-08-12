@@ -1,5 +1,6 @@
 package YemekSepetiStepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,27 +8,33 @@ import io.cucumber.java.en.When;
 public class YemekSepetiStepDefinitions {
 
     @Given("User navigate to {string} page")
-    public void user_navigate_to_page(String string) {
+    public void userNavigateToPage(String string) {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("Baris");
+        throw new io.cucumber.java.PendingException();
     }
 
-    @When("User clicks ÜYE GİRİŞİ button")
-    public void user_clicks_üye_gi̇ri̇şi̇_button() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Ustek");
+    @When("^User enters (.*) and (.*)$")
+    public void userEntersUsernameAndPassword() {
+
+    }
+
+    @And("User clicks {string} button")
+    public void userClicksButton(String label) {
+
     }
 
     @Then("User successfully logs in")
-    public void user_successfully_logs_in() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Cansu");
+    public void userSuccessfullyLogsIn() {
+
     }
 
-    @When("User enters username and password")
-    public void user_enters_username_and_password() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println("Ustek");
+    @Then("Error message is displayed")
+    public void errorMessageIsDisplayed() {
+
     }
 
+    @Then("^(.*) message is displayed$")
+    public void warnMessageIsDisplayed() {
+
+    }
 }
