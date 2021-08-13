@@ -38,8 +38,8 @@ public class YemekSepetiStepDefinitions {
     @After
     public void afterTest() {
 
-        driver.close();
-        driver.quit();
+        //driver.close();
+        //driver.quit();
     }
 
     @Given("User navigate to {string} page")
@@ -71,9 +71,13 @@ public class YemekSepetiStepDefinitions {
 
     }
 
-
-    @Then("^(.*) message is displayed$")
-    public void messageIsDisplayed(String errormessage) {
+    @Then("^Popup (.*) message is displayed$")
+    public void popupMessageIsDisplayed(String errormessage) {
         Assert.assertTrue(mainPage.checkErrorMessage(errormessage));
+    }
+
+    @Then("^TextBox (.*) message is displayed$")
+    public void textboxMessageIsDisplayed(String warnmessage) {
+        Assert.assertTrue(mainPage.checkWarnMessage(warnmessage));
     }
 }

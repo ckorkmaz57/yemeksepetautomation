@@ -17,32 +17,32 @@ Feature: YemekSepeti Login Case
   Scenario Outline: TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password
     When User enters <username> and <password>
     And User clicks "ÜYE GİRİŞİ" button
-    Then Error message is displayed
+    Then Popup <error> message is displayed
 
     Examples:
-      | username        | password        |
-      | testuser        | invalidpassword |
-      | invalidusername | password        |
-      | invalidusername | invalidpassword |
+      | username                  | password        | error                                                                          |
+      | yemeksepetitest@gmail.com | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
+      | invalidusername           | 10203057Test*   | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
+      | invalidusername           | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
 
-  Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username and password
-    When User enters <username> and <password>
-    And User clicks "ÜYE GİRİŞİ" button
-    Then <warn> message is displayed
-
-    Examples:
-      | username | password | warn                                                                                   |
-      | ""       | ""       | Lütfen kullanıcı adınızı/e-postanızı giriniz.,Şifre alanı için Lütfen şifrenizi girin. |
+  #Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username and password
+  #  When User enters <username> and <password>
+  #  And User clicks "ÜYE GİRİŞİ" button
+  #  Then <warn> message is displayed
+#
+  #  Examples:
+  #    | username | password | warn                                                                  |
+  #    |          |          | Lütfen kullanıcı adınızı/e-postanızı giriniz.,Lütfen şifrenizi girin. |
 
   Scenario Outline: TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password
     When User enters <username> and <password>
     And User clicks "ÜYE GİRİŞİ" button
-    Then <warn> message is displayed
+    Then TextBox <warn> message is displayed
 
     Examples:
-      | username | password | warn                                          |
-      | ""       | password | Lütfen kullanıcı adınızı/e-postanızı giriniz. |
-      | username | ""       | Şifre alanı için "Lütfen şifrenizi girin      |
+      | username                  | password      | warn                                          |
+      |                           | 10203057Test* | Lütfen kullanıcı adınızı/e-postanızı girini. |
+      | yemeksepetitest@gmail.com |               | Lütfen şifrenizi girini.                     |
 
     #Test failed should be inspected
   Scenario: TC_YemekSepetiLogin_005_User should not be login, when enters space character in username/e-mail textbox
