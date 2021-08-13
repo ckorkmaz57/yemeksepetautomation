@@ -38,8 +38,8 @@ public class YemekSepetiStepDefinitions {
     @After
     public void afterTest() {
 
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
 
     @Given("User navigate to {string} page")
@@ -71,13 +71,9 @@ public class YemekSepetiStepDefinitions {
 
     }
 
-    @Then("Error message is displayed")
-    public void errorMessageIsDisplayed() {
-
-    }
 
     @Then("^(.*) message is displayed$")
-    public void warnMessageIsDisplayed() {
-
+    public void messageIsDisplayed(String errormessage) {
+        Assert.assertTrue(mainPage.checkErrorMessage(errormessage));
     }
 }

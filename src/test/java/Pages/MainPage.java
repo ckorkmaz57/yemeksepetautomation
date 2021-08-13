@@ -19,6 +19,9 @@ public class MainPage extends PageObject{
     @FindBy(id="ys-fastlogin-button")
     private WebElement LoginButton;
 
+    @FindBy(xpath ="//span[@class='ys-xl inner']/strong")
+    private WebElement ErrorMessage;
+
     public void clickButton(){
         LoginButton.click();
     }
@@ -30,4 +33,8 @@ public class MainPage extends PageObject{
         Password.sendKeys(password);
     }
 
+    public boolean checkErrorMessage(String errormessage){
+        return ErrorMessage.getText().equals(errormessage);
+
+    }
 }

@@ -17,13 +17,13 @@ Feature: YemekSepeti Login Case
   Scenario Outline: TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password
     When User enters <username> and <password>
     And User clicks "ÜYE GİRİŞİ" button
-    Then Error message is displayed
+    Then <error> message is displayed
 
     Examples:
-      | username        | password        |
-      | testuser        | invalidpassword |
-      | invalidusername | password        |
-      | invalidusername | invalidpassword |
+      | username                  | password        | error                                                                          |
+      | yemeksepetitest@gmail.com | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
+      | invalidusername           | 10203057Test*   | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
+      | invalidusername           | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
 
   Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username and password
     When User enters <username> and <password>
