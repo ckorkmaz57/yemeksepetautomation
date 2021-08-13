@@ -11,9 +11,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Rule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -60,8 +57,7 @@ public class YemekSepetiStepDefinitions {
     public void userEntersUsernameAndPassword(String username,String password) {
 
         mainPage.setUserNameTextbox(username.equals("spacecharacter") ? " " : username);
-        mainPage.SetPasswordTexbox(password);
-
+        mainPage.setPasswordTexbox(password);
 
     }
 
@@ -75,6 +71,7 @@ public class YemekSepetiStepDefinitions {
     public void userSuccessfullyLogsIn(String username) {
         userBox = new UserBox(driver);
         Assert.assertTrue(userBox.checkUserName(username));
+        //mainPage.clickPopupCloseButton();
 
     }
 
@@ -99,4 +96,9 @@ public class YemekSepetiStepDefinitions {
 
     }
 
+    @When("User searches {string} in search textbox")
+    public void userSearchesInSearchTextbox(String searchtext) {
+        mainPage.setSearchBox(searchtext);
+        mainPage.clickSearchButton();
+    }
 }

@@ -28,6 +28,15 @@ public class MainPage extends PageObject{
     @FindBy(xpath = "//div/small[@data-cv-field='Password']")
     private WebElement PasswordWarnMessage;
 
+    @FindBy(xpath = "//div[@class='modal-header-title']/button[@aria-label='Kapat']")
+    private WebElement PopupCloseButton;
+
+    @FindBy(xpath = "//div/input[contains(@class, 'search-box')]")
+    private WebElement SearchBox;
+
+    @FindBy(xpath = "//div[contains(@class, 'search-button')]/button[@aria-label='ARA']")
+    private WebElement SearchButton;
+
     public void clickButton(){
         LoginButton.click();
     }
@@ -35,7 +44,7 @@ public class MainPage extends PageObject{
 
         UserNameTextbox.sendKeys(username);
     }
-    public void SetPasswordTexbox(String password){
+    public void setPasswordTexbox(String password){
         Password.sendKeys(password);
     }
 
@@ -49,5 +58,17 @@ public class MainPage extends PageObject{
             return UserNameWarnMessage.getText().equals(warnmessage);
         }
         return PasswordWarnMessage.getText().equals(warnmessage);
+    }
+
+    public void clickPopupCloseButton(){
+        PopupCloseButton.click();
+
+    }
+    public void setSearchBox(String searchtext) {
+        SearchBox.sendKeys(searchtext);
+    }
+
+    public void clickSearchButton() {
+        SearchButton.click();
     }
 }

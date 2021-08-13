@@ -1,7 +1,13 @@
 Feature:Yemek Sepeti Favorites Cases
 
+  Background:
+    Given User navigate to "https://www.yemeksepeti.com/istanbul" page
+    And User enters yemeksepetitest@gmail.com and 10203057Test*
+    And User clicks "ÜYE GİRİŞİ" button
+    And "TEST USER" successfully logs in
+
   Scenario: TC_YemekSepetiFavorites_001_User successfully adds favorite the restaurant
-    When User searchs restaurant in search textbox
+    When User searches "Burger King" in search textbox
     And User clicks on listed restaurant
     And User clicks Favorilere Ekle
     Then Favorilerden Çıkar displayed
