@@ -3,12 +3,19 @@ package YemekSepetiStepDefinitions;
 import Pages.MainPage;
 import Pages.UserBox;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -52,7 +59,7 @@ public class YemekSepetiStepDefinitions {
     @When("^User enters (.*) and (.*)$")
     public void userEntersUsernameAndPassword(String username,String password) {
 
-        mainPage.setUserNameTextbox(username);
+        mainPage.setUserNameTextbox(username.equals("spacecharacter") ? " " : username);
         mainPage.SetPasswordTexbox(password);
 
 
@@ -80,4 +87,16 @@ public class YemekSepetiStepDefinitions {
     public void textboxMessageIsDisplayed(String warnmessage) {
         Assert.assertTrue(mainPage.checkWarnMessage(warnmessage));
     }
+
+    @AfterStep
+    public void addScreenshot(Scenario scenario){
+
+        //validate if scenario has failed
+        if(scenario.isFailed()) {
+            final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "image");
+        }
+
+    }
+
 }

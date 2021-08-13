@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "html:target/htmlreports.html"},
+@CucumberOptions(plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = "YemekSepetiStepDefinitions",
         features = "classpath:/YemekSepeti")

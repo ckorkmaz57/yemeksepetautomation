@@ -24,6 +24,7 @@ Feature: YemekSepeti Login Case
       | yemeksepetitest@gmail.com | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
       | invalidusername           | 10203057Test*   | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
       | invalidusername           | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
+      | spacecharacter            | 10203057Test*   | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
 
   #Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username and password
   #  When User enters <username> and <password>
@@ -41,11 +42,5 @@ Feature: YemekSepeti Login Case
 
     Examples:
       | username                  | password      | warn                                          |
-      |                           | 10203057Test* | Lütfen kullanıcı adınızı/e-postanızı girini. |
-      | yemeksepetitest@gmail.com |               | Lütfen şifrenizi girini.                     |
-
-    #Test failed should be inspected
-  Scenario: TC_YemekSepetiLogin_005_User should not be login, when enters space character in username/e-mail textbox
-    When User enters e-mail and password
-    And User clicks "ÜYE GİRİŞİ" button
-    Then Error message is displayed
+      |                           | 10203057Test* | Lütfen kullanıcı adınızı/e-postanızı giriniz. |
+      | yemeksepetitest@gmail.com |               | Lütfen şifrenizi giriniz.                     |
