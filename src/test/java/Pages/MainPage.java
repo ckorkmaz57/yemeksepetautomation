@@ -1,8 +1,12 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class MainPage extends PageObject{
 
@@ -28,7 +32,7 @@ public class MainPage extends PageObject{
     @FindBy(xpath = "//div/small[@data-cv-field='Password']")
     private WebElement PasswordWarnMessage;
 
-    @FindBy(xpath = "//div[@class='modal-header-title']/button[@aria-label='Kapat']")
+    @FindBy(xpath = "//div[@class='modal-header']/button[@aria-label='Kapat']")
     private WebElement PopupCloseButton;
 
     @FindBy(xpath = "//div/input[contains(@class, 'search-box')]")
@@ -36,6 +40,14 @@ public class MainPage extends PageObject{
 
     @FindBy(xpath = "//div[contains(@class, 'search-button')]/button[@aria-label='ARA']")
     private WebElement SearchButton;
+
+    @FindBy(id="select2-ys-areaSelector-container")
+    private WebElement DistrictCombobox;
+
+    @FindBy(xpath = "//li[@aria-label='Kayıtlı Adreslerim']")
+    private WebElement SelectDropdown;
+
+
 
     public void clickButton(){
         LoginButton.click();
@@ -71,4 +83,13 @@ public class MainPage extends PageObject{
     public void clickSearchButton() {
         SearchButton.click();
     }
+
+    public void selectDistrict() {
+
+        DistrictCombobox.click();
+        List<WebElement> options = SelectDropdown.findElements(By.xpath("//ul[@class='select2-results__options select2-results__options--nested']"));
+        options.get(0).click();
+    }
+
+
 }

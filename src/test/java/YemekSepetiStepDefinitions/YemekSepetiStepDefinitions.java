@@ -1,6 +1,8 @@
 package YemekSepetiStepDefinitions;
 
 import Pages.MainPage;
+import Pages.RestaurantDetails;
+import Pages.SearchResults;
 import Pages.UserBox;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -10,6 +12,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,6 +27,8 @@ public class YemekSepetiStepDefinitions {
     protected WebDriver driver;
     MainPage mainPage ;
     UserBox userBox;
+    SearchResults searchResults;
+    RestaurantDetails restaurantDetails;
 
     @Before
     public void beforeTest() {
@@ -71,7 +76,7 @@ public class YemekSepetiStepDefinitions {
     public void userSuccessfullyLogsIn(String username) {
         userBox = new UserBox(driver);
         Assert.assertTrue(userBox.checkUserName(username));
-        //mainPage.clickPopupCloseButton();
+        mainPage.clickPopupCloseButton();
 
     }
 
@@ -100,5 +105,30 @@ public class YemekSepetiStepDefinitions {
     public void userSearchesInSearchTextbox(String searchtext) {
         mainPage.setSearchBox(searchtext);
         mainPage.clickSearchButton();
+
     }
+
+    @When("User select district")
+    public void userSelectDistrict() {
+        mainPage.selectDistrict();
+    }
+
+    @And("User clicks on listed restaurant")
+    public void userClicksOnListedRestaurant() {
+        searchResults = new SearchResults(driver);
+        searchResults.selectRestaurant();
+    }
+
+    @And("User clicks Favorilere Ekle")
+    public void userClicksFavorilereEkle() {
+     restaurantDetails = new RestaurantDetails(driver);
+     restaurantDetails.clickAddFavoritesButton();
+    }
+
+    @Then("{string} displayed")
+    public void favorilerdenÇıkarDisplayed(String check) {
+        restaurantDetails.checkRemoveButtonFavorites(check);
+    }
+
+
 }
