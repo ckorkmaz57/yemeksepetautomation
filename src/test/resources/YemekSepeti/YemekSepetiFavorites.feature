@@ -15,7 +15,7 @@ Feature:Yemek Sepeti Favorites Cases
 
 
   Scenario: TC_YemekSepetiFavorites_002_User successfully removes favorite restaurant
-    When User clicks on Favorilerim tab
+    When User clicks on "Favorilerim" menu
     And User checks on favorite restaurant
-    And User clicks Sil button
-    Then Favorite restaurant is removed
+    And User clicks "SİL" button in favorites menu
+    Then "Henüz favori restoranınız bulunmamaktadır." text should be displayed

@@ -7,14 +7,15 @@ Feature:Yemek Sepeti Favorites Cases
     And "TEST USER" successfully logs in
 
   Scenario: TC_YemekSepetiFavorites_001_User successfully adds favorite the restaurant
-    When User searches "Burger King" in search textbox
+    When User select district
+    And User searches "Burger King" in search textbox
     And User clicks on listed restaurant
     And User clicks Favorilere Ekle
-    Then Favorilerden Çıkar displayed
-    And Favorite restaurant is displayed in the Favorilerim tab
+    Then "Favorilerden Çıkar" displayed
+
 
   Scenario: TC_YemekSepetiFavorites_002_User successfully removes favorite restaurant
-    When User clicks on Favorilerim tab
+    When User clicks on "Favorilerim" menu
     And User checks on favorite restaurant
-    And User clicks Sil button
-    Then Favorite restaurant is removed
+    And User clicks "SİL" button in favorites menu
+    Then "Henüz favori restoranınız bulunmamaktadır." text should be displayed

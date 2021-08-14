@@ -1,9 +1,6 @@
 package YemekSepetiStepDefinitions;
 
-import Pages.MainPage;
-import Pages.RestaurantDetails;
-import Pages.SearchResults;
-import Pages.UserBox;
+import Pages.*;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -29,6 +26,7 @@ public class YemekSepetiStepDefinitions {
     UserBox userBox;
     SearchResults searchResults;
     RestaurantDetails restaurantDetails;
+    Favorites favorites;
 
     @Before
     public void beforeTest() {
@@ -47,8 +45,8 @@ public class YemekSepetiStepDefinitions {
     @After
     public void afterTest() {
 
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
 
     @Given("User navigate to {string} page")
@@ -126,9 +124,32 @@ public class YemekSepetiStepDefinitions {
     }
 
     @Then("{string} displayed")
-    public void favorilerdenÇıkarDisplayed(String check) {
-        restaurantDetails.checkRemoveButtonFavorites(check);
+    public void favorilerdenCikarDisplayed(String isfavoritecheck) {
+        restaurantDetails.checkRemoveButtonFavorites(isfavoritecheck);
     }
 
 
+    @When("User clicks on {string} menu")
+    public void userClicksOnMenu(String menuname) {
+        userBox.clickUserBoxMenu();
+        userBox.selectMenu(menuname);
+    }
+
+    @And("User checks on favorite restaurant")
+    public void userChecksOnFavoriteRestaurant() {
+
+        favorites = new Favorites(driver);
+        favorites.clickCheckBoxFavorites();
+    }
+
+
+    @And("User clicks {string} button in favorites menu")
+    public void userClicksButtonInFavoritesMenu(String buttonname) {
+        favorites.clickButtonInFavoritesMenu(buttonname);
+    }
+
+    @Then("{string} text should be displayed")
+    public void textShouldBeDisplayed(String emptyfavoritestext) {
+        Assert.assertTrue(favorites.checkEmptyFavoritesTest(emptyfavoritestext));
+    }
 }
