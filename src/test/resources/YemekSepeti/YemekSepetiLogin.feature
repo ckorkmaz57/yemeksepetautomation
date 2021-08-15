@@ -31,7 +31,7 @@ Feature: YemekSepeti Login Case
   #  When User enters <username> and <password>
   #  And User clicks "ÜYE GİRİŞİ" button
   #  Then <warn> message is displayed
-#
+
   #  Examples:
   #    | username | password | warn                                                                  |
   #    |          |          | Lütfen kullanıcı adınızı/e-postanızı giriniz.,Lütfen şifrenizi girin. |
