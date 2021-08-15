@@ -27,16 +27,8 @@ Feature: YemekSepeti Login Case
       | invalidusername           | invalidpassword | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
       | spacecharacter            | 10203057Test*   | Hatalı giriş. Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar deneyiniz. |
 
-  #Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username and password
-  #  When User enters <username> and <password>
-  #  And User clicks "ÜYE GİRİŞİ" button
-  #  Then <warn> message is displayed
 
-  #  Examples:
-  #    | username | password | warn                                                                  |
-  #    |          |          | Lütfen kullanıcı adınızı/e-postanızı giriniz.,Lütfen şifrenizi girin. |
-
-  Scenario Outline: TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password
+  Scenario Outline: TC_YemekSepetiLogin_003_User should not be login, when enters blank username or password
     When User enters <username> and <password>
     And User clicks "ÜYE GİRİŞİ" button
     Then TextBox <warn> message is displayed
