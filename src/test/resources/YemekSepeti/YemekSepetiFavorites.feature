@@ -1,3 +1,4 @@
+# encoding: utf-8
 Feature:Yemek Sepeti Favorites Cases
 
   Background:
@@ -10,12 +11,14 @@ Feature:Yemek Sepeti Favorites Cases
     When User select district
     And User searches "Burger King" in search textbox
     And User clicks on listed restaurant
+    And User clicks "Kapat" in banabi notification
     And User clicks Favorilere Ekle
     Then "Favorilerden Çıkar" displayed
 
 
   Scenario: TC_YemekSepetiFavorites_002_User successfully removes favorite restaurant
     When User clicks on "Favorilerim" menu
+    And User clicks "Kapat" in banabi notification
     And User checks on favorite restaurant
     And User clicks "SİL" button in favorites menu
     Then "Henüz favori restoranınız bulunmamaktadır." text should be displayed

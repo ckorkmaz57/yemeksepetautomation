@@ -1,5 +1,8 @@
 Pages\MainPage.class
 YemekSepetiStepDefinitions\YemekSepetiStepDefinitions.class
 Pages\PageObject.class
-YemekSepetiRunner\YemekSepetiRunner.class
+Pages\Favorites.class
+YemekSepetiTest\YemekSepetiTest.class
 Pages\UserBox.class
+Pages\RestaurantDetails.class
+Pages\SearchResults.class

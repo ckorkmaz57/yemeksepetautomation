@@ -1,4 +1,4 @@
-package YemekSepetiRunner;
+package YemekSepetiTest;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = "YemekSepetiStepDefinitions",
         features = "classpath:/YemekSepeti")
-public class YemekSepetiRunner {
+public class YemekSepetiTest {
 
 
 }

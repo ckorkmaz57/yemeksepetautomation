@@ -39,6 +39,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber6-adapter</artifactId>
             <version>2.1.0</version>
@@ -54,6 +60,25 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <environmentVariables>
+                        <browsername>chrome</browsername>
+                    </environmentVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

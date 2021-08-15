@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 15, 2021 03:03:26 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 15, 2021 09:51:18 PM</span></a>
 </li>
 </ul>
 </div>
@@ -80,25 +80,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Yemek Sepeti Favorites Cases</p>
+            <p class="name">YemekSepeti Login Case</p>
             <p class="text-sm">
-              <span>15:03:27 PM</span> / <span>00:39:742</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>21:51:19 PM</span> / <span>03:30:147</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Yemek Sepeti Favorites Cases</h5>
-<span class='badge badge-success'>08.15.2021 15:03:27</span>
-<span class='badge badge-danger'>08.15.2021 15:04:06</span>
-<span class='badge badge-default'>00:39:742</span>
+<h5 class="test-status text-fail">YemekSepeti Login Case</h5>
+<span class='badge badge-success'>08.15.2021 21:51:19</span>
+<span class='badge badge-danger'>08.15.2021 21:54:49</span>
+<span class='badge badge-default'>03:30:147</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -108,7 +108,288 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiFavorites_001_User successfully adds favorite the restaurant</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters yemeksepetitest@gmail.com and 10203057Test*</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then "TEST USER" successfully logs in</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="28"><span class="badge log fail-bg mr-2">Fail</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters yemeksepetitest@gmail.com and invalidpassword</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="42"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters invalidusername and 10203057Test*</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="53"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters invalidusername and invalidpassword</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="75"><span class="badge log fail-bg mr-2">Fail</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters spacecharacter and 10203057Test*</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.popupMessageIsDisplayed(YemekSepetiStepDefinitions.java:107)
+	at ?.Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed(classpath:YemekSepeti/YemekSepetiLogin.feature:21)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="92"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters  and 10203057Test*</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then TextBox Lütfen kullanýcý adýnýzý/e-postanýzý giriniz. message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="106"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters yemeksepetitest@gmail.com and </span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then TextBox Lütfen þifrenizi giriniz. message is displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Yemek Sepeti Favorites Cases</p>
+            <p class="text-sm">
+              <span>21:51:19 PM</span> / <span>03:28:653</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Yemek Sepeti Favorites Cases</h5>
+<span class='badge badge-success'>08.15.2021 21:51:19</span>
+<span class='badge badge-danger'>08.15.2021 21:54:48</span>
+<span class='badge badge-default'>03:28:653</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="5"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiFavorites_001_User successfully adds favorite the restaurant</div>
       </div>
     </div>
         <div class="collapse">
@@ -124,7 +405,7 @@
       </div>
               </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksButton(java.lang.String)">
-                <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
+                <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
       <div>
       </div>
               </div>
@@ -148,13 +429,18 @@
       <div>
       </div>
               </div>
+              <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksInBanabiNotification(java.lang.String)">
+                <span>And User clicks "Kapat" in banabi notification</span>
+      <div>
+      </div>
+              </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksFavorilereEkle()">
                 <span>And User clicks Favorilere Ekle</span>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.favorilerdenCikarDisplayed(java.lang.String)">
-                <span>Then "Favorilerden Ã‡Ä±kar" displayed</span>
+                <span>Then "Favorilerden Çýkar" displayed</span>
       <div>
       </div>
               </div>
@@ -164,7 +450,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiFavorites_002_User successfully removes favorite restaurant</div>
+        <div class="node" id="64"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiFavorites_002_User successfully removes favorite restaurant</div>
       </div>
     </div>
         <div class="collapse">
@@ -180,7 +466,7 @@
       </div>
               </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksButton(java.lang.String)">
-                <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
+                <span>And User clicks "ÜYE GÝRÝÞÝ" button</span>
       <div>
       </div>
               </div>
@@ -194,303 +480,27 @@
       <div>
       </div>
               </div>
+              <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksInBanabiNotification(java.lang.String)">
+                <span>And User clicks "Kapat" in banabi notification</span>
+      <div>
+      </div>
+              </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userChecksOnFavoriteRestaurant()">
                 <span>And User checks on favorite restaurant</span>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.userClicksButtonInFavoritesMenu(java.lang.String)">
-                <span>And User clicks "SÄ°L" button in favorites menu</span>
+                <span>And User clicks "SÝL" button in favorites menu</span>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.textShouldBeDisplayed(java.lang.String)">
-                <span>Then "HenÃ¼z favori restoranÄ±nÄ±z bulunmamaktadÄ±r." text should be displayed</span>
+                <span>Then "Henüz favori restoranýnýz bulunmamaktadýr." text should be displayed</span>
       <div>
       </div>
               </div>
           </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="42"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">YemekSepeti Login Case</p>
-            <p class="text-sm">
-              <span>15:04:07 PM</span> / <span>01:27:722</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">YemekSepeti Login Case</h5>
-<span class='badge badge-success'>08.15.2021 15:04:07</span>
-<span class='badge badge-danger'>08.15.2021 15:05:35</span>
-<span class='badge badge-default'>01:27:722</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="43"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="44"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_001_User should be successfully login, when enters correct username and password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters yemeksepetitest@gmail.com and 10203057Test*</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then "TEST USER" successfully logs in</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="55"><span class="badge log fail-bg mr-2">Fail</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="56"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters yemeksepetitest@gmail.com and invalidpassword</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="67"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters invalidusername and 10203057Test*</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="78"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters invalidusername and invalidpassword</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="89"><span class="badge log fail-bg mr-2">Fail</span>TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters spacecharacter and 10203057Test*</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.popupMessageIsDisplayed(YemekSepetiStepDefinitions.java:82)
-	at âœ½.Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed(classpath:YemekSepeti/YemekSepetiLogin.feature:20)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>YemekSepetiStepDefinitions.YemekSepetiStepDefinitions.addScreenshot(io.cucumber.java.Scenario)</span>
-      <div>
-          <div class="row mb-3"><div class="col-md-3">
-    <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
-    
-    </div></div>
-</div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="100"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters  and 10203057Test*</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then TextBox LÃ¼tfen kullanÄ±cÄ± adÄ±nÄ±zÄ±/e-postanÄ±zÄ± giriniz. message is displayed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="112"><span class="badge log pass-bg mr-2">Pass</span>TC_YemekSepetiLogin_004_User should not be login, when enters blank username or password</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User navigate to "https://www.yemeksepeti.com/istanbul" page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters yemeksepetitest@gmail.com and </span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks "ÃœYE GÄ°RÄ°ÅžÄ°" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then TextBox LÃ¼tfen ÅŸifrenizi giriniz. message is displayed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
         </div>
   </div>
 </div>
@@ -537,11 +547,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>15:04:57 PM</td>
+<td>21:53:55 PM</td>
 <td>
-<a href="#" class="linked" test-id='42' id='97'>Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</a>
+<a href="#" class="linked" test-id='1' id='89'>Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</a>
 <div class="">
-<span class="badge badge-default">YemekSepeti Login Case.TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password.Then Popup HatalÄ± giriÅŸ. LÃ¼tfen kullanÄ±cÄ± adÄ± ve ÅŸifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
+<span class="badge badge-default">YemekSepeti Login Case.TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password.Then Popup Hatalý giriþ. Lütfen kullanýcý adý ve þifrenizi kontrol edip tekrar deneyiniz. message is displayed</span>
 </div>
 </td>
 </tr>
@@ -562,13 +572,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 15, 2021 03:03:26 PM</h3>
+<h3>Aug 15, 2021 09:51:18 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 15, 2021 03:05:38 PM</h3>
+<h3>Aug 15, 2021 09:54:52 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -639,7 +649,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='97%'><b>45</b> steps passed</small></div>
+<div><small data-tooltip='97%'><b>47</b> steps passed</small></div>
 <div>
 <small data-tooltip='2%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -658,7 +668,7 @@
 </div></div>
 <script>
 var timeline = {
-"Yemek Sepeti Favorites Cases":39.742,"YemekSepeti Login Case":87.722
+"YemekSepeti Login Case":210.147,"Yemek Sepeti Favorites Cases":208.653
 };
 </script>
 <div class="row">
@@ -678,7 +688,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 45,
+passGrandChild: 47,
 failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,

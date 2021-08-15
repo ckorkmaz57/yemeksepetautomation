@@ -10,18 +10,24 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class YemekSepetiStepDefinitions {
 
     protected WebDriver driver;
-    MainPage mainPage ;
+    String browserName ;
+    MainPage mainPage;
     UserBox userBox;
     SearchResults searchResults;
     RestaurantDetails restaurantDetails;
@@ -29,15 +35,34 @@ public class YemekSepetiStepDefinitions {
 
     @Before
     public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
+
+        if (System.getProperty("browsername") == null){
+            browserName = "chrome";
+        }else
+        browserName=System.getProperty("browsername").toLowerCase(Locale.ROOT);
+
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized")
                 .addArguments("--disable-notifications");
 
-        driver = new ChromeDriver(chromeOptions);
+        if (browserName.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
+            driver = new ChromeDriver(chromeOptions);
+        } else if (browserName.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", "webdriver/geckodriver.exe");
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+        } else {
+            System.exit(0);
+        }
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         mainPage = new MainPage(driver);
+        restaurantDetails = new RestaurantDetails(driver);
+        userBox = new UserBox(driver);
+        searchResults = new SearchResults(driver);
+        favorites = new Favorites(driver);
 
     }
 
@@ -56,7 +81,7 @@ public class YemekSepetiStepDefinitions {
     }
 
     @When("^User enters (.*) and (.*)$")
-    public void userEntersUsernameAndPassword(String username,String password) {
+    public void userEntersUsernameAndPassword(String username, String password) {
 
         mainPage.setUserNameTextbox(username.equals("spacecharacter") ? " " : username);
         mainPage.setPasswordTexbox(password);
@@ -71,7 +96,7 @@ public class YemekSepetiStepDefinitions {
 
     @Then("{string} successfully logs in")
     public void userSuccessfullyLogsIn(String username) {
-        userBox = new UserBox(driver);
+
         Assert.assertTrue(userBox.checkUserName(username));
         mainPage.clickPopupCloseButton();
 
@@ -88,10 +113,10 @@ public class YemekSepetiStepDefinitions {
     }
 
     @AfterStep
-    public void addScreenshot(Scenario scenario){
+    public void addScreenshot(Scenario scenario) {
 
         //validate if scenario has failed
-        if(scenario.isFailed()) {
+        if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "image");
         }
@@ -112,19 +137,20 @@ public class YemekSepetiStepDefinitions {
 
     @And("User clicks on listed restaurant")
     public void userClicksOnListedRestaurant() {
-        searchResults = new SearchResults(driver);
+
         searchResults.selectRestaurant();
     }
 
     @And("User clicks Favorilere Ekle")
     public void userClicksFavorilereEkle() {
-     restaurantDetails = new RestaurantDetails(driver);
-     restaurantDetails.clickAddFavoritesButton();
+
+        restaurantDetails.clickAddFavoritesButton();
     }
 
     @Then("{string} displayed")
-    public void favorilerdenCikarDisplayed(String isfavoritecheck) {
+    public void favorilerdenCikarDisplayed(String isfavoritecheck) throws InterruptedException{
         restaurantDetails.checkRemoveButtonFavorites(isfavoritecheck);
+        Thread.sleep(5000);
     }
 
 
@@ -137,7 +163,7 @@ public class YemekSepetiStepDefinitions {
     @And("User checks on favorite restaurant")
     public void userChecksOnFavoriteRestaurant() {
 
-        favorites = new Favorites(driver);
+
         favorites.clickCheckBoxFavorites();
     }
 
@@ -150,5 +176,10 @@ public class YemekSepetiStepDefinitions {
     @Then("{string} text should be displayed")
     public void textShouldBeDisplayed(String emptyfavoritestext) {
         Assert.assertTrue(favorites.checkEmptyFavoritesTest(emptyfavoritestext));
+    }
+
+    @And("User clicks {string} in banabi notification")
+    public void userClicksInBanabiNotification(String buttonName) {
+        restaurantDetails.closeBanabiNotification(buttonName);
     }
 }

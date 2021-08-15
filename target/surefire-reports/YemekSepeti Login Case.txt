@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: YemekSepeti Login Case
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 213.196 s <<< FAILURE! - in YemekSepeti Login Case
+TC_YemekSepetiLogin_002_User should not be login, when enters invalid username or password #4(YemekSepeti Login Case)  Time elapsed: 25.542 s  <<< FAILURE!
+java.lang.AssertionError
+

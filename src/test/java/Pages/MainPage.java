@@ -66,7 +66,7 @@ public class MainPage extends PageObject{
     }
 
     public boolean checkWarnMessage(String warnmessage) {
-        if(warnmessage.contains("kullanıcı")){
+        if(warnmessage.contains("e-posta")){
             return UserNameWarnMessage.getText().equals(warnmessage);
         }
         return PasswordWarnMessage.getText().equals(warnmessage);

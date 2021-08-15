@@ -1,4 +1,5 @@
 #noinspection NonAsciiCharacters
+# encoding: utf-8
 Feature: YemekSepeti Login Case
 
   Background:
